@@ -1,0 +1,654 @@
+:root {
+  /* LIGHT MODE */
+  --pink-light: #f7c4d9;
+  --pink-border: #e28fb0;
+  --pink-bg-light: #f0e6f7;
+
+  --blue-light: #e6f4ff;
+  --blue-box: #d4ecfa;
+  --blue-border: #87c9f5;
+  --blue-accent: #0b6fa4;
+  --blue-medium: #bde3f8;
+
+  --purple-border: #a25b7f;
+}
+
+/* DARK MODE COLORS */
+body.dark {
+--pink-light: #4b6760; 
+--pink-border: #134b3d; 
+--pink-bg-light: #244b4157; 
+--blue-light: #b0b38f; 
+--blue-box: #9aa070; 
+--blue-border: #363b23;
+--blue-accent: #6f7650;
+--blue-medium: #8a9464; 
+--purple-border: #062f1e;
+
+}
+
+/* MAIN PAGE */
+
+.main-page {
+  min-height: 100vh;
+  background: var(--blue-light);
+}
+
+/* MAIN LAYOUT */
+.main-container {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr;
+  gap: 20px;
+  padding: 30px;
+  border-radius: 30px;
+}
+
+/* LEFT COLUMN */
+.left-col {
+  background: var(--blue-box);
+  border: 3px solid var(--blue-border);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.left-col img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--blue-accent);
+}
+
+.left-col button {
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid var(--purple-border);
+  border-radius: 5px;
+  background: var(--pink-bg-light);
+  cursor: pointer;
+}
+
+.left-col select
+{
+  border: 2px solid var(--purple-border);
+  background: var(--pink-bg-light);
+  outline: none;
+  font-size: 15px;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+
+.left-col {
+  position: relative !important;
+  z-index: 9999 !important;
+}
+
+/* MIDDLE COLUMN */
+.middle-col {
+  background: var(--pink-light);
+  border: 3px solid var(--pink-border);
+  border-radius: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.middle-col h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.middle-col button {
+  cursor: pointer;
+  border: 2px solid var(--purple-border);
+  font-size: 16px;
+  font-weight: bold;
+  background: var(--pink-bg-light);
+}
+
+.course-list button {
+  border: 2px solid var(--blue-border);
+  font-weight: normal;
+  margin-top: 8px;
+  margin-right: 8px;
+}
+
+.selected-courses {
+  margin-top: 15px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+/* RIGHT COLUMN */
+.right-col {
+  background: var(--blue-medium);
+  border: 3px solid var(--blue-border);
+  border-radius: 25px;
+}
+
+/* GENERAL ROUNDED SHAPES */
+.column {
+  padding: 20px;
+  border-radius: 30px;
+}
+
+/* FILE INPUT STYLE */
+input[type="file"] {
+  margin-top: 10px;
+}
+
+/* Glavni fullscreen container */
+.register-container {
+  width: 100%;
+  height: 100vh;
+  background: var(--blue-medium);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Veliki naslov FESBuddy */
+.main-title {
+  font-size: 70px;
+  font-weight: 800;
+  color: var(--pink-border);
+}
+
+/* Wrapper za lijevu i desnu stranu */
+.content-wrapper {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+}
+
+/* Lijevi dio (slika) */
+.left-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.buddy-img {
+  width: 380px;
+}
+
+/* Desni dio (kutija s formom) */
+.right-box {
+  max-width: 400px;
+  width: 100%; /*ovoga nije bilo*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+}
+
+/* Naslov forme */
+.form-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--pink-border);
+}
+
+/* Input polja */
+.auth-input {
+  width: 100%;
+  padding: 12px;
+  background: var(--pink-bg-light);
+  border: 2px solid var(--pink-border);
+  border-radius: 6px;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+/* Dugme */
+.auth-button {
+  width: 100%;
+  background: var(--pink-border);
+  border: none;
+  padding: 14px;
+  color: white;
+  font-weight: 700;
+  font-size: 17px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 10px;
+  transition: 0.2s;
+}
+
+.auth-button:hover {
+  background: var(--pink-light);
+}
+
+/* Tekst + Link za login */
+.switch-text {
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+.switch-link {
+  color: var(--pink-border);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.switch-link:hover {
+  text-decoration: underline;
+}
+
+/* MATCH PAGE */
+.match-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--blue-light);
+}
+
+.match-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.right-col {
+  border-radius: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* LOGIN PAGE */
+.login-container {
+  width: 100%;
+  height: 100vh;
+  background: var(--blue-medium);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FESBuddy naslov */
+.main-title {
+  font-size: 70px;
+  font-weight: 800;
+  color: var(--pink-border);
+}
+
+/* Wrapper */
+.content-wrapper {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+}
+
+/* Lijeva strana */
+.left-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.buddy-img {
+  width: 380px;
+}
+
+/* Desna strana */
+.right-box {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Naslov forme */
+.form-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--pink-border);
+}
+
+/* Input polja */
+.auth-input {
+  width: 100%;
+  padding: 12px;
+  background: var(--pink-bg-light);
+  border: 2px solid var(--pink-border);
+  border-radius: 6px;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+/* Glavni gumb */
+.auth-button {
+  width: 100%;
+  background: var(--pink-border);
+  border: none;
+  padding: 14px;
+  color: white;
+  font-weight: 700;
+  font-size: 17px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 10px;
+  transition: 0.2s;
+}
+
+.auth-button:hover {
+  background: var(--pink-light);
+}
+
+/* Switch link */
+.switch-text {
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+.switch-link {
+  color: var(--pink-border);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.switch-link:hover {
+  text-decoration: underline;
+}
+
+/* HEADER */
+.main-header {
+  background: var(--pink-light);
+  padding: 5px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 3px solid var(--pink-border);
+}
+
+.header-img-circle {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-img-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header-buttons button {
+  background: var(--blue-medium);
+  border: 2px solid var(--blue-border);
+  padding: 4px 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: medium;
+  cursor: pointer;
+  height: 45px;
+  transition: 0.2s;
+}
+
+.header-buttons button:hover {
+  background: var(--blue-box);
+}
+
+.mode {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--blue-medium);
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid var(--blue-border);
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+hr {
+  border: none;
+  margin: 10px 0;
+}
+
+.btn {
+font-size: 16px;
+  font-weight: bold;
+  border: 2px solid var(--purple-border);
+  border-radius: 5px;
+  background: var(--pink-bg-light);
+  cursor: pointer;  
+  margin-top: 10px;
+
+}
+
+.right-col {
+  background: var(--blue-medium);
+  border: 3px solid var(--blue-border);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+/* kolegij dizajn */
+.course-page-container, .script-page-container {
+  background-color: var(--blue-light);
+  min-height: 100vh;
+}
+
+.course-page , script-page{
+display: flex;
+height: calc(100vh - 100px); /* oduzima visinu headera i footera */}
+
+/* Lijevi panel */
+
+.left-panel {
+  width: 25%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  box-shadow: 2px 0 0px rgba(0,0,0,0.1);
+  border-right: 2px solid var(--pink-border);
+  height: 100%;
+}
+
+
+.course-name-circle {
+width: 220px;
+height: 220px;
+border-radius: 50%;
+background-color: var(--pink-border);
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 24px;
+color: white;
+font-weight: bold;
+text-align: center;
+box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.buttons-container {
+display: flex;
+flex-direction: column;
+gap: 10px;
+width: 100%;
+}
+
+.course-btn {
+padding: 10px;
+border: none;
+border-radius: 8px;
+background-color: var(--blue-box);
+color: var(--pink-border);
+cursor: pointer;
+transition: background-color 0.2s, color 0.2s;
+border: 1px solid var(--pink-border);
+}
+
+.course-btn:hover {
+background-color: var(--blue-accent);
+color: white;
+}
+
+/* Desni panel */
+.right-panel {
+width: 75%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+padding: 20px;
+gap: 40px;
+}
+
+.square {
+width: 70%;
+background-color: var(--pink-bg-light);
+display: flex;
+justify-content:center;
+align-items: center;
+padding: 20px; /* ovo stvara prostor između sadržaja i ruba kvadrata */
+font-weight: bold;
+box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+border-radius: 8px;
+border: 2px solid var(--purple-border);
+}
+
+/* Forma unutar kvadrata */
+.request-form {
+  display: grid;
+  grid-template-columns: 1fr; /* jedna kolona za mobilno / square */
+  gap: 16px;
+  margin-top: 10px;
+}
+
+/* Grupe inputa */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Radio buttoni u gridu */
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Tekstualni inputi */
+.input-field {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--blue-border);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Button unutar forme */
+.request-form .course-btn {
+  margin-top: 10px;
+  width: 50%;
+  align-self: center;
+}
+
+.course-btn1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  margin: 0 auto;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--blue-box);
+  color: var(--pink-border);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  border: 1px solid var(--pink-border);
+}
+
+/* script-natuknice */
+.script-page-container, .course-page-container {
+  background-color: var(--blue-light);
+  min-height: 100vh;
+}
+
+.square1 {
+  width: 70%;
+  background-color: var(--pink-bg-light);
+  display: flex;
+  justify-content: center;
+  padding: 20px; /* ovo stvara prostor između sadržaja i ruba kvadrata */
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  border: 2px solid var(--purple-border);
+  flex-direction: column;
+  gap: 20px;
+}
+
+.square1 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notes-textarea {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 3px solid var(--purple-border);
+  background-color: var(--pink-light);
+  box-sizing: border-box;
+  color: black;
+  background-color: var(--blue-light);
+  font-size: medium;
+  font-weight: bold;
+}
