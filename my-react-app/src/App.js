@@ -20,7 +20,7 @@ function App() {
         <Route path="/" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/HomePage" element={<HomePage />} />
-        <Route path="/Match" element={<Match />} />
+        <Route path="/match" element={<Match />} />
         <Route path="/course/:courseName" element={<CoursePage />} />
         <Route path="/script/:courseName" element={<Script />} />
         <Route path="/notes/:courseName" element={<Notes />} />

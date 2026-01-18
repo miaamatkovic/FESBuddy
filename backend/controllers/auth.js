@@ -6,24 +6,30 @@ import jwt from "jsonwebtoken";
 
 //provjeravamo je li vec user postoji pri registraciji
 
-export const register = (req, res)=>{
-    //CHECK USER IF EXISTS
-    const q = "SELECT * FROM users WHERE username = ?"
+export const register = (req, res) => {
+    const qCheck = "SELECT * FROM users WHERE username = ?";
 
-    db.query(q, [req.body.username], (err,data)=>{
-        if(err) return res.status(500).json(err)
-        if(data.length) return res.status(409).json("User already exists!")
-    //CREATE A NEW USER
-        //Hash the password
-        const salt = bcrypt.genSaltSync(10);    //metoda za hashiranje lozinki
-        const hashedPassword = bcrypt.hashSync(req.body.password, salt)
+    db.query(qCheck, [req.body.username], (err, data) => {
+        if (err) return res.status(500).json(err.sqlMessage);
+        if (data.length) return res.status(409).json("User already exists!");
 
-        const q = "INSERT INTO users (`username`, `email`, `password`) VALUE (?)"
+        const salt = bcrypt.genSaltSync(10);
+        const hashedPassword = bcrypt.hashSync(req.body.password, salt);
 
-        const values = [req.body.username, req.body.email, hashedPassword]
-        
-        db.query(q, [values], (err, data)=>{
-            if(err) return res.status(500).json(err)
+        const qInsert =
+            "INSERT INTO users (`username`, `email`, `password`) VALUES (?)";
+
+        const values = [
+            req.body.username,
+            req.body.email,
+            hashedPassword
+        ];
+
+        db.query(qInsert, [values], (err, data) => {
+            if (err) {
+                console.error(err);
+                return res.status(500).json(err.sqlMessage);
+            }
             return res.status(200).json("User has been created.");
         });
     });

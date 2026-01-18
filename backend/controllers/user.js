@@ -78,15 +78,3 @@ export const saveUserGender = (req, res) => {
   });
 };
 
-// Spremanje bio teksta korisnika
-// export const saveUserBio = (req, res) => {
-//   const userId = req.params.userId;
-//   const { bio } = req.body;
-
-//   const query = "UPDATE users SET bio = ? WHERE id_user = ?";
-//   db.query(query, [bio, userId], (err) => {
-//     if (err) return res.status(500).json(err);
-//     res.status(200).json("Bio spremljen");
-//   });
-// };
-
