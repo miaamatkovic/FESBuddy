@@ -54,9 +54,9 @@ export default function Script() {
     if (!currentUser || !courseId) return;
     try {
       setLoading(true);
-      const res = await axios.get(
-        `http://localhost:8800/api/scripts/${currentUser.id_user}/${courseId}`
-      );
+        const res = await axios.get(
+          `http://localhost:8800/api/scripts/${courseId}`
+        );
       setScripts(res.data);
       setErr(null);
     } catch (e) {
@@ -139,7 +139,7 @@ export default function Script() {
               <b>Moje bilješke</b>
             </button>
             <button className="course-btn" onClick={() => navigate(`/script/${courseName}`)}>
-              <b>Moje skripte</b>
+              <b>Skripte</b>
             </button>
           </div>
         </div>
@@ -185,7 +185,7 @@ export default function Script() {
 
           {/* List right */}
           <div className="right-panel-notes--right">
-            <h2>MOJE SKRIPTE</h2>
+            <h2>SKRIPTE</h2>
 
             {loading ? (
               <p>Učitavanje skripti...</p>
@@ -198,6 +198,9 @@ export default function Script() {
                     <p>
                       <b>{s.title}</b>
                     </p>
+
+                    <p>Autor: {s.username}</p>
+
                     {s.description && <p>{s.description}</p>}
 
                     <a
@@ -208,9 +211,11 @@ export default function Script() {
                       Otvori / Download
                     </a>
 
-                    <button className="delete-btn" onClick={() => handleDelete(s.id_script)}>
-                      Obriši
-                    </button>
+                    {currentUser?.id_user === s.id_user && (
+                      <button className="delete-btn" onClick={() => handleDelete(s.id_script)}>
+                        Obriši
+                      </button>
+                    )}
                   </div>
                 ))}
               </div>

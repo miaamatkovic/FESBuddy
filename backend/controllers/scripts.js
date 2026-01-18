@@ -3,16 +3,18 @@ import fs from "fs";
 import path from "path";
 
 export const getScriptsByCourse = (req, res) => {
-  const { userId, courseId } = req.params;
+  const { courseId } = req.params;
 
   const q = `
-    SELECT id_script, id_user, id_course, title, file_path, description
-    FROM script
-    WHERE id_user = ? AND id_course = ?
-    ORDER BY id_script DESC
+    SELECT s.id_script, s.id_user, s.id_course, s.title, s.file_path, s.description,
+           u.username
+    FROM script s
+    JOIN users u ON u.id_user = s.id_user
+    WHERE s.id_course = ?
+    ORDER BY s.id_script DESC
   `;
 
-  db.query(q, [userId, courseId], (err, data) => {
+  db.query(q, [courseId], (err, data) => {
     if (err) return res.status(500).json(err);
     return res.status(200).json(data);
   });

@@ -25,7 +25,7 @@ return (
           <button className="course-btn" onClick={() => navigate(`/course/${courseName}`)}><b>Kreiraj zahtjev</b></button>
           <button className="course-btn" onClick={() => navigate(`/posts/${courseName}`)}><b>Zahtjevi</b></button>
           <button className="course-btn" onClick={() => navigate(`/notes/${courseName}`)}><b>Moje bilješke</b></button>
-          <button className="course-btn" onClick={() => navigate(`/script/${courseName}`)}><b>Moje skripte</b></button>
+          <button className="course-btn" onClick={() => navigate(`/script/${courseName}`)}><b>Skripte</b></button>
         </div>
       </div>
 
