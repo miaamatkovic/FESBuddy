@@ -26,6 +26,7 @@ function App() {
         <Route path="/notes/:courseName" element={<Notes />} />
         <Route path="/posts/:courseName" element={<Posts />} />
         <Route path="/Connected" element={<Connected />} />
+        <Route path="/script/:courseName" element={<Script />} />
       </Routes>
     </BrowserRouter>
   );

@@ -10,10 +10,17 @@ import postsRoutes from "./routes/posts.js";
 import matchesRoutes from "./routes/matches.js";
 import messagesRoutes from "./routes/messages.js";
 import notesRoutes from "./routes/notes.js";
+import path from "path";
+import { fileURLToPath } from "url";
+import scriptsRoutes from "./routes/scripts.js";
+
 
 //middlewares
 // CORS + credentials (allow cookies)
 const allowedOrigins = ["http://localhost:3000", "http://localhost:3001"];
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use((req, res, next) => {
   const origin = req.headers.origin;
@@ -46,6 +53,8 @@ app.use("/api/posts", postsRoutes);
 app.use("/api/matches", matchesRoutes);
 app.use("/api/messages", messagesRoutes);
 app.use("/api/notes", notesRoutes);
+app.use("/uploads", Express.static(path.join(__dirname, "uploads")));
+app.use("/api/scripts", scriptsRoutes);
 
 app.listen(8800, ()=>{
     console.log("API working!");
