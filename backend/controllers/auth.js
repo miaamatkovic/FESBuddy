@@ -48,7 +48,7 @@ export const login = (req, res) => {
       return res.status(400).json("Wrong password or username!");
 
     //  token mora koristiti id_user, ne id
-    const token = jwt.sign({ id: data[0].id_user }, "REMOVED_JWT_SECRET");
+    const token = jwt.sign({ id: data[0].id_user }, process.env.JWT_SECRET);
 
     const { password, ...others } = data[0];
 
