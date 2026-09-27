@@ -8,14 +8,13 @@ The application was developed as a university team project at the Faculty of Ele
 
 - User registration and authentication
 - Student profiles
-- Search for students by course
-- Send, accept, and reject study partner requests
+- Course-based study partner matching
+- Sending, accepting and rejecting study partner requests
 - Private messaging between matched students
 - Personal notes for individual courses
-- Upload and access study materials
+- Uploading and accessing study materials
 - Posts and course-related content
 - Pomodoro study timer
-- Course-based organization
 - Customizable application themes
 
 ## Technologies
@@ -32,8 +31,10 @@ The application was developed as a university team project at the Faculty of Ele
 - Node.js
 - Express.js
 - MySQL
+- REST API
 - JWT authentication
 - bcrypt
+- Multer
 
 ### Tools
 - Git & GitHub
@@ -55,18 +56,42 @@ My main contributions included:
 - Contributing to parts of the React frontend
 - Using Git and GitHub for version control throughout the development process
 
+## Screenshots
+
+### Home
+
+User profile, enrolled courses and integrated Pomodoro study timer.
+
+![FESBuddy Home](docs/screenshots/home.png)
+
+### Study Partner Matching
+
+Users can send, accept or reject study partner requests.
+
+![FESBuddy Match System](docs/screenshots/match.png)
+
+### Private Messaging
+
+Matched students can communicate through private conversations.
+
+![FESBuddy Chat](docs/screenshots/chat.png)
+
+### Course Notes
+
+Students can create and manage personal notes for individual courses.
+
+![FESBuddy Notes](docs/screenshots/notes.png)
+
 ## Project Structure
 
 ```text
 FESBuddy/
 ├── backend/          # REST API, authentication and database communication
 ├── my-react-app/     # React frontend
+├── docs/
+│   └── screenshots/  # Application screenshots
 └── README.md
 ```
-
-## Screenshots
-
-Screenshots of the application will be added here.
 
 ## Running the Project Locally
 
@@ -78,6 +103,12 @@ Navigate to the backend directory:
 cd backend
 npm install
 npm start
+```
+
+For development with automatic server restart:
+
+```bash
+npm run dev
 ```
 
 Create a `.env` file inside the `backend` directory and configure the required environment variables:
@@ -92,7 +123,7 @@ JWT_SECRET=your_jwt_secret
 
 ### Frontend
 
-Navigate to the frontend directory:
+Open another terminal and navigate to the frontend directory:
 
 ```bash
 cd my-react-app
